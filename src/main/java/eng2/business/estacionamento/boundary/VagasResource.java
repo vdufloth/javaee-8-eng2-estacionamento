@@ -21,7 +21,7 @@ import javax.ws.rs.core.MediaType;
 /**
  * @author vinicius.dufloth
  */
-@Path("estacionamento")
+@Path("vaga")
 public class VagasResource {
     @Inject
     VagaService vs;
