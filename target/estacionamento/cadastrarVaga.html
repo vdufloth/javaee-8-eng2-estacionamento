@@ -5,18 +5,19 @@
  </head>
  <body>
     <div class="container">  
-        <form id="contact" action="" method="post">
+        <form id="vagaForm" onsubmit="cadastrarVaga()">
         <h3>Cadastrar Vaga</h3>
         <fieldset>
-            <input placeholder="Número da vaga" type="text" tabindex="1" required autofocus>
+            <input placeholder="Numero da vaga" type="text" tabindex="1" required autofocus>
         </fieldset>
         <fieldset>
-            <input placeholder="Descrição" type="text" tabindex="2" required>
+            <input placeholder="Descricao" type="text" tabindex="2" required>
         </fieldset>
         <fieldset>
             <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Cadastrar</button>
         </fieldset>
         </form>
     </div>
+     <script src="main.js"></script> 
   </body>  
 </html>

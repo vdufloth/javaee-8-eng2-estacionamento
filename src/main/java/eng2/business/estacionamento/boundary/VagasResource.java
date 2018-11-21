@@ -38,6 +38,6 @@ public class VagasResource {
         int numero = vaga.getInt("numero");
         String descricao = vaga.getString("descricao");
         String placa = vaga.getString("placa");
-        this.vs.save(new Vaga(numero,descricao,placa));
+       // this.vs.save(new Vaga(numero,descricao,placa));
     }
 }

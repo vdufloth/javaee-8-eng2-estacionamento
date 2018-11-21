@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package eng2.business.estacionamento.entity;
 
 import java.io.Serializable;
@@ -10,28 +15,29 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * @author vinicius.dufloth
+ *
+ * @author vld
  */
 @XmlRootElement
 @Entity
 @XmlAccessorType(XmlAccessType.FIELD)
-@NamedQuery(name="vagas", query="SELECT v FROM Vaga v")
-public class Vaga implements Serializable {
-    
+@NamedQuery(name = "tarifas", query = "SELECT t FROM Tarifa t")
+public class Tarifa implements Serializable {
+
     @Id
     @GeneratedValue
     private long id;
-    private int numero;
-    private String descricao;   
+    private String descricao;
+    private Double valorminuto;
     
-    public Vaga (){
-    }
-    
-    public Vaga (int numero, String desc){
-        this.numero = numero;
-        this.descricao = desc;
+    public Tarifa() {
     }
 
+    public Tarifa(String descricao, Double valorminuto) {
+        this.descricao = descricao;
+        this.valorminuto = valorminuto;
+    }
+    
     public long getId() {
         return id;
     }
@@ -40,19 +46,21 @@ public class Vaga implements Serializable {
         this.id = id;
     }
 
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
     public String getDescricao() {
         return descricao;
     }
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }    
+    }
+
+    public Double getValorminuto() {
+        return valorminuto;
+    }
+
+    public void setValorminuto(Double valorminuto) {
+        this.valorminuto = valorminuto;
+    }
+
+
 }

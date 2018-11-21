@@ -1,6 +1,6 @@
 package eng2.business.estacionamento.boundary;
 
-import eng2.business.estacionamento.controll.VagaLoja;
+import eng2.business.estacionamento.controll.VagaControll;
 import eng2.business.estacionamento.entity.Vaga;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -13,10 +13,10 @@ import javax.inject.Inject;
 public class VagaService {
     
     @Inject
-    VagaLoja cs;
+    VagaControll cs;
     
     public List<Vaga> getAllVagas(){
-        return this.cs.all();
+        return this.cs.getAll();
     }
     
     public void save(Vaga vaga){
