@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     fetchVagas();
-    criaVaga();
 }, false);
 
 function montaLista(vagas) {
@@ -14,13 +13,13 @@ function montaLista(vagas) {
         var numero = vagas[i].numero;
         var desc = vagas[i].descricao;
         var placa = vagas[i].placa;
-        vagasList.innerHTML += '<div>'+
-                             '<hr></hr>' +
-                              '<p>ID: ' + id + '</p>'+
-                             '<p>Numero: ' + numero + '</p>'+
-                             '<p>Descricao: ' + desc + '</p>'+
-                             '<p>Placa: ' + placa + '</p>'+
-                           '</div>';
+        vagasList.innerHTML += '<div class="itemVaga">'+
+                                '<hr></hr>' +
+                                 '<p>ID: ' + id + '</p>'+
+                                '<p>Numero: ' + numero + '</p>'+
+                                '<p>Descricao: ' + desc + '</p>'+
+                                '<p>Placa: ' + placa + '</p>'+
+                              '</div>';
     }
 }
 
@@ -40,11 +39,14 @@ function fetchVagas() {
 function criaVaga() {
     var ajax = new XMLHttpRequest();
     var URL = "resources/vaga";
-    //var URL = "localhost:8080/eng2-estacionamento/resources/vaga";
+    var vagaNum = document.getElementsByClassName('vagaNumero')[0].value;
+    var vagaDesc = document.getElementsByClassName('vagaDescri')[0].value;
+    
     ajax.open("POST", URL, true);
     ajax.setRequestHeader("Content-type", "application/json");
-
-    ajax.send(JSON.stringify({numero: 123, descricao: "teste", placa: "12345"}));
+    var jsonStringfy = JSON.stringify({numero: vagaNum, descricao: vagaDesc})
+    console.log("jsonStringfy:", jsonStringfy);
+    ajax.send(jsonStringfy);
 
     ajax.onreadystatechange = function() {
         if (ajax.readyState == 4 && ajax.status == 200) {

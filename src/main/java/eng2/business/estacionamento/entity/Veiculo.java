@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eng2.business.estacionamento.entity;
 
 import java.io.Serializable;
@@ -16,7 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author vld
+ * @author vinicius.dufloth
  */
 @XmlRootElement
 @Entity
@@ -28,16 +23,12 @@ public class Veiculo implements Serializable {
     @GeneratedValue
     private long id;
     private String modelo;
-    private String cor;
-    private String placa;
 
     public Veiculo() {
     }
 
-    public Veiculo(String modelo, String cor, String placa) {
+    public Veiculo(String modelo) {
         this.modelo = modelo;
-        this.cor = cor;
-        this.placa = placa;
     }
     
 
@@ -55,23 +46,5 @@ public class Veiculo implements Serializable {
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
-    }
-
-    public String getCor() {
-        return cor;
-    }
-
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
-
-    public String getPlaca() {
-        return placa;
-    }
-
-    public void setPlaca(String placa) {
-        this.placa = placa;
-    }
-    
-
+    }   
 }

@@ -18,7 +18,7 @@ body {
   font-size: 12px;
   line-height: 30px;
   color: #777;
-  background: #4CAF50;
+  background: #29385abf;
 }
 
 .container {
@@ -40,7 +40,7 @@ body {
 #contact {
   background: #F9F9F9;
   padding: 25px;
-  margin: 150px 0;
+  margin: 150px 0 0 0;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
@@ -99,7 +99,7 @@ fieldset {
   cursor: pointer;
   width: 100%;
   border: none;
-  background: #4CAF50;
+  background: #29385abf;
   color: #FFF;
   margin: 0 0 5px;
   padding: 10px;
@@ -141,4 +141,59 @@ fieldset {
 
 :-ms-input-placeholder {
   color: #888;
+}
+
+.optionButton {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: #29385abf;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.buttonOptions {
+    display: inline-grid;
+    margin-top: 31px;
+    width: 100%
+}
+
+#vagasList {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+#registerData {
+    background: #F9F9F9;
+    padding: 25px;
+    margin-top: 30px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.itemVaga {
+    margin: 15px 40px 15px 40px;
+    background: #F9F9F9;
+    padding: 25px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.itemTarifa {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 70px;
+}
+a {
+    text-decoration:none;
+}
+
+.selectForm {
+    width: 100%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    height: 38px;
+    font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+    color: #8a8a8a;   
 }

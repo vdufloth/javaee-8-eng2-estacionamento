@@ -16,6 +16,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @XmlAccessorType(XmlAccessType.FIELD)
 @NamedQuery(name="vagas", query="SELECT v FROM Vaga v")
+@NamedQuery(name="vagasLivres", query="SELECT v FROM Vaga v, Estacionamento e "
+                                             + "WHERE v NOT IN e")
 public class Vaga implements Serializable {
     
     @Id

@@ -2,7 +2,6 @@ package eng2.business.estacionamento.entity;
 
 import java.io.Serializable;
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -14,7 +13,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * @author vld
+ * @author vinicius.dufloth
  */
 @XmlRootElement
 @Entity
@@ -28,6 +27,8 @@ public class Estacionamento implements Serializable {
     private String cnh;
     private String nomecliente;
     private String horaentrada;
+    private String placa;
+    
     @OneToOne(cascade=CascadeType.ALL)
     private Tarifa tarifa;
     @OneToOne(fetch = FetchType.LAZY)
@@ -38,10 +39,11 @@ public class Estacionamento implements Serializable {
     public Estacionamento() {
     }
 
-    public Estacionamento(String cnh, String nomecliente, String horaentrada) {
+    public Estacionamento(String cnh, String nomecliente, String horaentrada, String placa) {
         this.cnh = cnh;
         this.nomecliente = nomecliente;
         this.horaentrada = horaentrada;
+        this.placa = placa;
     }
 
     public long getId() {
@@ -50,6 +52,14 @@ public class Estacionamento implements Serializable {
 
     public Tarifa getTarifa() {
         return tarifa;
+    }
+    
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
     }
 
     public void setTarifa(Tarifa tarifa) {

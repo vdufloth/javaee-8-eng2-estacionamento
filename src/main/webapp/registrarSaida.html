@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="container">  
+            <form id="contact" onsubmit="criaVaga()">          
+              <h3>Registrar Saida do Veiculo</h3>
+              <fieldset>
+                  <input placeholder="Numero da vaga" id="contact-submit" class="vagaNumeroSaida" type="text" tabindex="1" required autofocus>
+              </fieldset>
+              <fieldset>
+                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Registrar Saida</button>
+              </fieldset>
+            </form>
+            <div id="registerData">
+                <div class="itemTarifa">
+                    <hr />
+                    <p>12.4 HORAS</p>
+                    <p>5 pila</p>
+                    <a class="optionButton" href="index.html">Confirmar Pagamento</a>
+                </div>
+             </div>
+        </div>
+        <script src="registrarSaida.js"></script>    
+    </body>  
+</html>

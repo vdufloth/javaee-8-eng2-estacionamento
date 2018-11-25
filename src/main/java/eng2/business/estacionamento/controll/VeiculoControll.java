@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eng2.business.estacionamento.controll;
 
 import eng2.business.estacionamento.entity.Veiculo;
@@ -13,7 +8,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author vld
+ * @author vinicius.dufloth
  */
 @Stateless
 public class VeiculoControll {

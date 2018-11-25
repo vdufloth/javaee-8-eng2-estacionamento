@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eng2.business.estacionamento.controll;
 
 import com.google.gson.Gson;
@@ -15,7 +10,7 @@ import javax.inject.Inject;
 
 /**
  *
- * @author vld
+ * @author vinicius.dufloth
  */
 @Stateless
 public class TestControll {
@@ -31,7 +26,7 @@ public class TestControll {
     
     public String test(){
         Vaga vaga = new Vaga(1, "primeiravaga");
-        Veiculo veiculo = new Veiculo("gol", "vermelho", "ISM-3455");
+        Veiculo veiculo = new Veiculo("Camaro 2013");
         Tarifa tarifa = new Tarifa("Carro Pequeno", 0.3);
 
         vac.save(vaga);
@@ -39,19 +34,19 @@ public class TestControll {
         vec.save(veiculo);
 
         vaga = new Vaga(2, "vaga perto do hidrante");
-        veiculo = new Veiculo("Camaro", "Amarelo", "GAY-2424");
+        veiculo = new Veiculo("Gol Rebaixado");
         tarifa = new Tarifa("Carro de Rico", 12.99);
 
         tc.save(tarifa);
         vac.save(vaga);
         vec.save(veiculo);
 
-        Estacionamento estacionamento = new Estacionamento("62648130356", "Jhon", "13:57");
+        Estacionamento estacionamento = new Estacionamento("62648130356", "Jhon", "13:57", "ISM-1235");
 
         tc.getAll().get(1).getId();
         ec.save(estacionamento, tc.getAll().get(0).getId(), vac.getAll().get(0).getId(), vec.getAll().get(0).getId());
 
-        estacionamento = new Estacionamento("40303166406", "Afonso", "17:12");
+        estacionamento = new Estacionamento("40303166406", "Afonso", "17:12", "ENG-1234");
         ec.save(estacionamento, tc.getAll().get(1).getId(), vac.getAll().get(1).getId(), vec.getAll().get(1).getId());
         
         StringBuilder resultado = new StringBuilder("Resultado: ");

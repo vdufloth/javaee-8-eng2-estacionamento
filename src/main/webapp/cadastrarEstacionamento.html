@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+ </head>
+ <body>
+    <div class="container">  
+        <form id="contact" action="" method="post" onsubmit="criaEstacionamento()">
+        <h3>Cadastrar Veículo</h3>
+        <fieldset>
+            <input placeholder="Nome do cliente" type="text" tabindex="1" required autofocus class="nomeCLi">
+        </fieldset>
+        <fieldset>
+            <input placeholder="CNH" type="text" tabindex="1" required autofocus class="CNH">
+        </fieldset>
+        <fieldset>
+            <input placeholder="Placa do carro" type="text" tabindex="2" required class="placaCarro">
+        </fieldset>
+        <fieldset>
+            <select id="idVagas" class="selectVagas selectForm"></select>
+        </fieldset>
+        <fieldset>
+            <select id="idModelos" class="selectModelos selectForm"></select>
+        </fieldset>
+        <fieldset>
+            <select id="idTarifas" class="selectTarifas selectForm"></select>
+        </fieldset> 
+        <fieldset>
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Cadastrar</button>
+        </fieldset>
+        </form>
+    </div>
+    <script src="estacionamento.js"></script>
+  </body>  
+</html>

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package eng2.business.estacionamento.boundary;
 
 import eng2.business.estacionamento.controll.TestControll;
@@ -12,7 +7,7 @@ import javax.ws.rs.Path;
 
 /**
  *
- * @author vld
+ * @author vinicius.dufloth
  */
 @Path("/test")
 public class TestingResource {

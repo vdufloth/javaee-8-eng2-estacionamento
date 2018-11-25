@@ -23,4 +23,10 @@ public class VagaControll {
                 createNamedQuery("vagas", Vaga.class).
                 getResultList();
     }
+    
+    public List<Vaga> getFree(){
+        return this.em.
+                createNamedQuery("vagasLivres", Vaga.class).
+                getResultList();
+    }
 }
