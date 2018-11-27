@@ -2,11 +2,12 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="UTF-8">
     </head>
     <body>
         <div class="container">  
-            <form id="contact" onsubmit="criaVaga()">          
-              <h3>Registrar Saida do Veiculo</h3>
+            <form id="contact" action="" method="post" onsubmit="deletaEstacionamento()">          
+              <h3>Registrar Saída do Veiculo</h3>
               <fieldset>
                   <input placeholder="Numero da vaga" id="contact-submit" class="vagaNumeroSaida" type="text" tabindex="1" required autofocus>
               </fieldset>
@@ -14,14 +15,14 @@
                 <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Registrar Saida</button>
               </fieldset>
             </form>
-            <div id="registerData">
-                <div class="itemTarifa">
-                    <hr />
-                    <p>12.4 HORAS</p>
-                    <p>5 pila</p>
-                    <a class="optionButton" href="index.html">Confirmar Pagamento</a>
-                </div>
-             </div>
+            <div id="registerData"><div class="itemTarifa">
+                                        <hr/> 
+                                        <p>Tempo total na vaga:</p>
+                                        <p>50 minutos</p>
+                                        <p>Valor a ser cobrado:</p>
+                                        <p> R$ 1,50</p>
+                                        <a class="optionButton" href="index.html">Confirmar Pagamento</a>
+                                     </div>'</div>
         </div>
         <script src="registrarSaida.js"></script>    
     </body>  

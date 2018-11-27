@@ -5,8 +5,7 @@ function deletaEstacionamento() {
     
     ajax.open("POST", URL, true);
     ajax.setRequestHeader("Content-type", "application/json");
-    var jsonStringfy = JSON.stringify({numero: vagaNum})
-    console.log("jsonStringfy:", jsonStringfy);
+    var jsonStringfy = JSON.stringify({numero: vagaNum});
     ajax.send(jsonStringfy);
 
     ajax.onreadystatechange = function() {
@@ -18,18 +17,20 @@ function deletaEstacionamento() {
     }
 }
 function montaDadosDeRegistro(dadosDoEstacionamento) {
+    console.log("entrou");
     var dadosDeRegistro = document.getElementById('registerData');
     dadosDeRegistro.innerHTML = '';
     
     dadosDoEstacionamento = JSON.parse(dadosDoEstacionamento);
-
+    
     for (var i = 0; i < dadosDoEstacionamento.length; i++) {
         var tempo = dadosDoEstacionamento[i].tempo;
         var valor = dadosDoEstacionamento[i].valor;
-        dadosDeRegistro.innerHTML += '<div>'+
-                                '<hr></hr>' +
-                                 '<p>ID: ' + tempo + '</p>'+
-                                '<p>Numero: ' + valor + '</p>'+
-                              '</div>';
+        dadosDeRegistro.innerHTML += '<div class="itemTarifa">'+
+                                        '<hr /> '+
+                                        '<p>Tempo total na vaga: '+tempo+' minutos</p> '+
+                                        '<p>Valor a ser cobrado: R$ '+valor+'</p> '+
+                                        '<a class="optionButton" href="index.html">Confirmar Pagamento</a>' +
+                                     '</div>'
     }
 }

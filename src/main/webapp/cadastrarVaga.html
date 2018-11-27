@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <link rel="stylesheet" type="text/css" href="style.css">
- </head>
- <body>
-    <div class="container">  
-      <form id="contact" onsubmit="criaVaga()">          
-        <h3>Cadastrar Vaga</h3>
-        <fieldset>
-            <input placeholder="Numero da vaga" id="contact-submit" class="vagaNumero" type="text" tabindex="1" required autofocus>
-        </fieldset>
-        <fieldset>
-            <input placeholder="Descricao" id="contact-submit" type="text" class="vagaDescri" tabindex="2" required>
-        </fieldset>
-        <fieldset>
-          <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-        </fieldset>
-      </form>
-    </div>
-     <div id="vagasList"></div>
-    <script src="vagas.js"></script>    
-  </body>  
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="container">  
+            <form id="contact" onsubmit="criaVaga()">          
+                <h3>Cadastrar Vaga</h3>
+                <fieldset>
+                    <input placeholder="Numero da vaga" id="contact-submit" class="vagaNumero" type="text" tabindex="1" required autofocus>
+                </fieldset>
+                <fieldset>
+                    <input placeholder="Descricao" id="contact-submit" type="text" class="vagaDescri" tabindex="2" required>
+                </fieldset>
+                <fieldset>
+                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                </fieldset>
+            </form>
+        </div>
+        <div id="vagasList"></div>
+        <script src="cadastrarVaga.js"></script>    
+    </body>  
 </html>

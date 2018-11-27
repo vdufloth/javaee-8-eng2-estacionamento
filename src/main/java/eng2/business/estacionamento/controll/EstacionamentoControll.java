@@ -28,7 +28,11 @@ public class EstacionamentoControll {
     }
     
     public void save(Estacionamento estacionamento){
-        em.merge(estacionamento);
+        try {
+            em.merge(estacionamento);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
     
     public List<Estacionamento> getAll() {

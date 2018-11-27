@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     fetchTarifas();
     fetchVagas();
     fetchModelos();
+    
+    criaEstacionamento();
 }, false);
 
 function fetchTarifas() {
@@ -53,8 +55,8 @@ function montaListaModelos(modelos) {
         var id = modelos[i].id;
         var modelo = modelos[i].modelo;
         modelosSelect.innerHTML += '<option value = \"'+ id + '\">' + 
-                               modelo +
-                              '</option>';
+                                    modelo +
+                                   '</option>';
     }
 }
 function fetchVagas() {
@@ -85,31 +87,44 @@ function montaListaVagas(vagas) {
 }
 
 function criaEstacionamento() {
-    var ajax = new XMLHttpRequest();
-    var URL = "resources/estacionamento";
-    var nomeCliente = document.getElementsByClassName('nomeCLi')[0].value;
-    var cnhCLi = document.getElementsByClassName('CNH')[0].value;
-    var placaCarro = document.getElementsByClassName('placaCarro')[0].value;
-    
-    var vagaOption = document.getElementByClassName("selectTarifas");
-    var vagaSelectedOption = modeloOption.options[modeloOption.selectedIndex].value;
-    
-    var modeloOption = document.getElementByClassName("selectModelos");
-    var modeloSelectedOption = modeloOption.options[modeloOption.selectedIndex].value;
-    
-    var tarifaOption = document.getElementByClassName("selectTarifas");
-    var tarifaSelectedOption = modeloOption.options[modeloOption.selectedIndex].value;
-    
-    ajax.open("POST", URL, true);
-    ajax.setRequestHeader("Content-type", "application/json");
-    var jsonStringfy = JSON.stringify({nome: nomeCliente, cnh: cnhCLi, vagaid: vagaSelectedOption, placa: placaCarro, veiculoid: modeloSelectedOption, tarifaid: tarifaSelectedOption})
-    console.log("jsonStringfy:", jsonStringfy);
-    ajax.send(jsonStringfy);
+    var form_el = document.getElementsByClassName("registrar_estacionamento_form")[0];
 
-    ajax.onreadystatechange = function() {
-        if (ajax.readyState == 4 && ajax.status == 200) {
-            var data = ajax.responseText;
-            console.log(data);
-        }
-    }
+    form_el.addEventListener("submit", function(evt) {
+        evt.preventDefault();
+    
+        var ajax = new XMLHttpRequest();
+
+        var URL = "resources/estacionamento";
+        var nomeCliente = document.getElementsByClassName('nomeCLi')[0].value;
+        var cnhCLi = document.getElementsByClassName('CNH')[0].value;
+        var placaCarro = document.getElementsByClassName('placaCarro')[0].value;
+
+        var vagaOption = document.getElementsByClassName("selectVagas");
+        var vagaSelectedOption = vagaOption[0].options[vagaOption[0].selectedIndex].value;
+        
+    //    var modeloOption = document.getElementsByClassName("selectModelos");
+    //    var modeloSelectedOption = modeloOption[0].options[modeloOption[0].selectedIndex].value;
+    //    
+    //    var tarifaOption = document.getElementsByClassName("selectTarifas");
+    //    var tarifaSelectedOption = tarifaOption[0].options[tarifaOption[0].selectedIndex].value;
+
+//        var vagaSelectedOption = "12";
+//
+//        var modeloSelectedOption = "5";
+//
+//        var tarifaSelectedOption = "1";
+//
+//        ajax.open("POST", URL, true);
+//        ajax.setRequestHeader("Content-type", "application/json");
+//        var jsonStringfy = JSON.stringify({nome: nomeCliente, cnh: cnhCLi, vagaid: vagaSelectedOption, placa: placaCarro, veiculoid: modeloSelectedOption, tarifaid: tarifaSelectedOption})
+//        console.log("jsonStringfy:", jsonStringfy);
+//        ajax.send(jsonStringfy);
+//
+//        ajax.onreadystatechange = function() {
+//            if (ajax.readyState == 4 && ajax.status == 200) {
+//                var data = ajax.responseText;
+//                console.log(data);
+//            }
+//        }
+    });
 }

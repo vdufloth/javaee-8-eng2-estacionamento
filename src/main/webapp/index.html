@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <meta charset="UTF-8">
- </head>
- <body>
-    <div class="container">  
-      <form id="contact" onsubmit="cadastrarVaga()">          
-        <h3>Opcoes de Estacionamento</h3>
-        <div class="buttonOptions">
-            <a class="optionButton" href="cadastrarVaga.html">Cadastrar Vaga</a>
-            <a class="optionButton" href="cadastrarEstacionamento.html">Cadastrar Veiculo</a>
-            <a class="optionButton" href="registrarSaida.html">Registrar Saída</a>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="container">  
+            <form id="contact" onsubmit="cadastrarVaga()">          
+                <h3>Opções de Estacionamento</h3>
+                <div class="buttonOptions">
+                    <a class="optionButton" href="cadastrarVaga.html">Cadastrar Vaga</a>
+                    <a class="optionButton" href="registrarEntrada.html">Registrar Entrada</a>
+                    <a class="optionButton" href="registrarSaida.html">Registrar Saída</a>
+                </div>
+            </form>
         </div>
-      </form>
-    </div>   
-  </body>  
+        <div id="estacionamentoList"></div>
+        <script src="index.js"></script>
+    </body>  
 </html>

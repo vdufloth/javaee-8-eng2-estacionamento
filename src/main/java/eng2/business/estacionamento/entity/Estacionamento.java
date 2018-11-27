@@ -3,7 +3,6 @@ package eng2.business.estacionamento.entity;
 import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
@@ -31,9 +30,9 @@ public class Estacionamento implements Serializable {
     
     @OneToOne(cascade=CascadeType.ALL)
     private Tarifa tarifa;
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     private Veiculo veiculo;
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     private Vaga vaga;
 
     public Estacionamento() {

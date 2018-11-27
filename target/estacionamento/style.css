@@ -160,7 +160,8 @@ fieldset {
     width: 100%
 }
 
-#vagasList {
+#vagasList,
+#estacionamentoList{
     display: grid;
     grid-template-columns: auto auto auto;
 }

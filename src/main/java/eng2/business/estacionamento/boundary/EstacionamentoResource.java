@@ -40,9 +40,10 @@ public class EstacionamentoResource {
         String placa = jo.getString("placa");
         String hora = Instant.now().toString();
         
-        long tarifaid = jo.getInt("tarifaid");
-        long vagaid = jo.getInt("vagaid");
-        long veiculoid = jo.getInt("veiculoid");
+        long tarifaid = Integer.parseInt(jo.getString("tarifaid"));
+        System.out.println(tarifaid);
+        long vagaid = Integer.parseInt(jo.getString("vagaid"));
+        long veiculoid = Integer.parseInt(jo.getString("veiculoid"));
         
         this.controll.save(new Estacionamento(cnh,nome,hora,placa),tarifaid,veiculoid,vagaid);
     }
